@@ -1,0 +1,56 @@
+<config>
+ <!-- Network -->
+  <!-- COMMENT
+    You may need to specify a proxy to communicate with the FAH
+    work servers. Use the following line with an appropriate proxy
+    if so.
+    <proxy v='8.8.8.8'/>
+  -->
+  
+
+ <!-- Slot Control -->
+  <power v='FULL'/>
+
+  <!-- User Information -->
+  <team v='239945'/> <!-- Arizona Research Computing -->
+  <user v='Institution_Cluster_Partition_Nodeinfo'/>
+  <!-- COMMENT 
+    contact us for our passkey!
+    <passkey v='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'/>
+  -->
+
+ <!-- Web Server -->
+  <!-- COMMENT
+    This allows for monitoring of a node's FAH status by connecting to
+    https://foldingathome.org/client from the node
+  -->
+  <web-allow v='localhost'/>
+
+ <!-- Folding Slots -->
+  <!-- COMMENT
+    Create a slot for each GPU on the system. 
+
+    Depending on your node, you may want to create multiple CPU slots, 
+    as your overall throughput may increase. A quick observed
+    benchmarking run is beneficial for determining this, but keep in
+    mind abandoned work penalties. In practice, a work unit had to reach
+    about 1% complete before the web server ETA was accurate.
+
+    NOTE: each GPU slot reserves 1 core.
+
+    NOTE: CPU slots like even numbers of cores.
+  -->
+  <slot id='0'  type='CPU'/>
+  <slot id='1'  type='CPU'/>
+  <slot id='2'  type='CPU'/>
+  <slot id='3'  type='CPU'/>
+
+  <slot id='4'  type='GPU'/>
+  <slot id='5'  type='GPU'/>
+  <slot id='6'  type='GPU'/>
+  <slot id='7'  type='GPU'/>
+  <slot id='8'  type='GPU'/>
+  <slot id='9'  type='GPU'/>
+  <slot id='10' type='GPU'/>
+  <slot id='11' type='GPU'/>
+</config>
