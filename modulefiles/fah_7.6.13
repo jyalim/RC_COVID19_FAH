@@ -1,0 +1,66 @@
+#%Module1.0
+##
+# THE FOLLOWING MODULE FILE IS PROVIDED AS A GUIDING TEMPLATE ONLY
+#
+# SOME DEPENDECIES ARE NOT INCLUDED AS THEY ARE SPECIFIC TO THE 
+# ARIZONA STATE UNIVERSITY RESEARCH COMPUTING CLUSTER
+#
+##
+ 
+proc ModulesHelp { } {
+  puts stderr "Protein folding to assist in dpidemiological research"
+}
+module-whatis "Protein folding to assist in epidemiological research"
+
+source $env(MODULESHOME)/modulefiles/.required_functions
+
+source $env(MODULESHOME)/modulefiles/.7xonly
+
+set topdir /packages/$osprefix/fah/7.6.13
+
+# Edit the entries below as needed and comment out any that are not relevant
+prepend-path    PATH                $topdir
+#prepend-path    CLASSPATH           $topdir
+#prepend-path    LD_LIBRARY_PATH     $topdir/lib
+#prepend-path    LD_LIBRARY_PATH     $topdir/lib64
+#prepend-path    INCLUDE             $topdir/include
+#prepend-path    MANPATH             $topdir/share/man
+#prepend-path    INFOPATH            $topdir/share/info
+
+
+
+SqlStoreModuleLoad N/A 
+
+if { [module-info mode display] } {
+
+	# A2C2 FIELDS
+	setenv A2C2_5X "0"
+	setenv A2C2_6X "0"
+	setenv A2C2_7X "1"
+	setenv A2C2_NOLOGIN "0"
+	setenv A2C2_DEPRECATED "0"
+	setenv A2C2_EXPERIMENTAL "0"
+	setenv A2C2_DISCOURAGED "0"
+	setenv A2C2_RETIRED "0"
+	setenv A2C2_VIRTUAL "0"
+
+	setenv A2C2_TAGS "CATEGORY"
+	setenv A2C2_DESCRIPTION "Folding@home (FAH or F@H) is a distributed computing project for simulating protein dynamics, including the process of protein folding and the movements of proteins implicated in a variety of diseases"
+	setenv A2C2_URL "https://foldingathome.org/"
+	setenv A2C2_NOTES ""
+
+	setenv A2C2_INSTALL_DATE "2020-05-15"
+	setenv A2C2_INSTALLER "jyalim"
+	setenv A2C2_BUILDPATH "/packages/7x/build/fah/7.6.13"
+
+	setenv A2C2_MODIFY_DATE "YYYY-MM-DD" 
+	setenv A2C2_MODIFIER "<ASURITE>"
+
+	setenv A2C2_VERIFY_DATE "YYYY-MM-DD"
+	setenv A2C2_VERIFIER "<ASURITE>"
+
+} 
+
+
+# vim: ft=tcl
+
